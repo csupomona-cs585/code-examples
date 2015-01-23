@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +27,7 @@ import org.junit.runners.MethodSorters;
 public class HamcrestTest {
 
 	private List<String> values;
+	private Map<String, String> map;
 
 	@Before
 	public void setUpList() {
@@ -34,6 +36,10 @@ public class HamcrestTest {
 		values.add("y");
 		values.add("z");
 		values.add("one");
+
+		map = new HashMap<String, String>();
+		map.put("585", "vv");
+		map.put("580", "se");
 	}
 
 	@Test
@@ -45,12 +51,11 @@ public class HamcrestTest {
 	}
 
 	@Test
-	public void testWithHamcrest() {
+	public void testWithHamcrest() throws IOException {
 		assertThat(values, Matchers.hasItem(anyOf(equalTo("one"), equalTo("two"),
 			equalTo("three"))));
 
-		Map<String, String> res = new HashMap<String, String>();
-		res.put("yu", "test");
-		assertThat(res, Matchers.hasKey("yu"));
+		assertTrue(map.containsKey("580"));
+		assertThat(map, Matchers.hasKey("580"));
 	}
 }

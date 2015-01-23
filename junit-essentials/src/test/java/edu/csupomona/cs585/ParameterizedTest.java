@@ -27,7 +27,7 @@ public class ParameterizedTest {
        return Arrays.asList(new Integer[][] {
           {2, 1, 1},  //expected, valueOne, valueTwo
           {3, 2, 1},  //expected, valueOne, valueTwo
-          {4, 3, 1},  //expected, valueOne, valueTwo
+          {8, 3, 1},  //expected, valueOne, valueTwo
        });
     }
 
