@@ -16,7 +16,7 @@ public class BigStringTableImplTest {
 		ShortenUrlService url = mock(ShortenUrlService.class);
 
 		UrlResponse urlResponse = new UrlResponse();
-		urlResponse.setId("http://google.com/dfher");
+		urlResponse.setId("https://google.com/dfher");
 		urlResponse.setLongUrl("http://test_string_abc/");
 
 		when(url.getShortUrl("test_string_abc")).thenReturn(urlResponse);
@@ -32,11 +32,6 @@ public class BigStringTableImplTest {
 
 		String value = table.get(key);
 		Assert.assertEquals("test_string_abc", value);
-
-		for(int i = 0; i < BigStringTableImpl.lines.length; i++) {
-			System.out.println("line "
-					+ i + ": " + BigStringTableImpl.lines[i]);
-		}
 	}
 
 }

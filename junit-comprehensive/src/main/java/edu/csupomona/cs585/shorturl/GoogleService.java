@@ -9,9 +9,9 @@ import retrofit.http.Query;
 public interface GoogleService {
 
     @Headers({ "Content-type: application/json" })
-    @POST("/urlshortener/v1/url")
+    @POST("/urlshortener/v1/url?key=AIzaSyDB3AYd6-4km3JKfIQWTHAMYJYIgIl5BZA")
     public UrlResponse getShortUrl(@Body LongUrl longUrl);
 
-    @GET("/urlshortener/v1/url")
+    @GET("/urlshortener/v1/url?key=AIzaSyDB3AYd6-4km3JKfIQWTHAMYJYIgIl5BZA")
     public UrlResponse expandShortUrl(@Query("shortUrl") String shortUrl);
 }
